@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recepient</title>
+    <link rel="stylesheet" href="../Blood-Bank-System/Styles.css">
+
+    <h2>Recepient Form</h2>
+    
+    <form action="submit_donation.php" method="post">
+
+        <label for="ID">ID:</label>
+        <input type="text" name="ID" id="ID" placeholder="1234567890" size="10" required>
+
+        <label for="name">First Name:</label>
+        <input type="text" id="FirstName" name="FirstName" placeholder="Mohammed" required>
+
+        <label for="name">Middle Name:</label>
+        <input type="text" id="MiddleName" name="MiddleName" placeholder="Ahmed" required>
+
+        <label for="name">Last Name:</label>
+        <input type="text" id="LastName" name="LastName" placeholder="Aljaafri" required>
+
+        <label for="email">Email(not Required):</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" >
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="0512345678" required>
+
+        <label for="bloodType">Blood Type:</label>
+        <select id="bloodType" name="bloodType" required>
+            <option value="" disabled selected>Select your blood type</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+
+      
+            
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </form>
+</head>
+<body>
+    
+</body>
+</html>
