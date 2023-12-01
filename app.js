@@ -1,41 +1,58 @@
-const express = require('express');
-const app = express();
-const port = 3000;
-const { MongoClient } = require("mongodb");
+var express = require("express")
+var bodyParser = require("body-parser")
+var mongoose = require("mongoose")
 
-// Replace the uri string with your connection string.
-const uri = "mongodb+srv://lilo:123@cluster0.bonii93.mongodb.net/";
+const app = express()
 
-const client = new MongoClient(uri);
+app.use(bodyParser.json())
+app.use(express.static('public'))
+app.use(bodyParser.urlencoded({
+    extended:true
+}))
 
-async function exist() {
-  try {
-    const database = client.db('Blood_bank');
-    const person = database.collection('Person');
-
-    // Query for a person 
-    const query = { _id: 'new ObjectId("6560a17ba068377f5ffc1c5a")'};
-    const record = await person.findOne(query);
-    if(record === null){
-        console.log("not found");
-        return false;
-    }
-    else{
-        console.log(record);
-        return true;
-    }
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-exist()
-.catch(console.dir);
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+mongoose.connect('mongodb+srv://lilo:123@cluster0.bonii93.mongodb.net/Blood_bank',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+var db = mongoose.connection;
+
+db.on('error',()=>console.log("Error in Connecting to Database"));
+db.once('open',()=>console.log("Connected to Database"))
+
+app.post("/donor",(req,res)=>{
+    var name = req.body.name;
+    var email = req.body.email;
+    var phno = req.body.phno;
+    var password = req.body.password;
+
+    var data = {
+        "ID": name,
+        "email" : email,
+        "phno": phno,
+        "password" : password
+    }
+
+    db.collection('users').insertOne(data,(err,collection)=>{
+        if(err){
+            throw err;
+        }
+        console.log("Record Inserted Successfully");
+    });
+
+    return res.redirect('signup_success.html');
+
+})
+app.get('/donor',(req,res)=>{
+  res.sendFile('public/donor.html');
+})
+
+app.get("/",(req,res)=>{
+    res.set({
+        "Allow-access-Allow-Origin": '*'
+    })
+    return res.redirect('donor.html');
+}).listen(3000);
+
+
+console.log("Listening on PORT 3000");

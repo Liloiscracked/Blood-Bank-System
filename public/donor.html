@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood Donation Form</title>
-    <link rel="stylesheet" href="../Blood-Bank-System/Styles.css">
+    <link rel="stylesheet" href="Styles.css">
+    <script src="authenticate.js"></script>
 </head>
 <body>
 
     <h2>Blood Donor Form</h2>
     
-    <form action="submit_donation.php" method="post">
+    <form action="submit_donation.php" method="post" id="Form">
 
         <label for="ID">ID:</label>
         <input type="text" name="ID" id="ID" placeholder="1234567890" size="10" required>
@@ -28,7 +29,7 @@
         <input type="email" id="email" name="email" placeholder="example@gmail.com">
 
         <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" placeholder="0512345678" required>
+        <input type="tel" id="phone" name="phone" size="10" placeholder="0512345678" required>
 
         <label for="bloodType">Blood Type:</label>
         <select id="bloodType" name="bloodType" required>
@@ -53,7 +54,7 @@
         </div>
             
 
-        <input type="submit" value="Submit">
+        <input onclick="" type="submit" value="Submit" id="submit">
         <input type="reset" value="Clear">
     </form>
 
