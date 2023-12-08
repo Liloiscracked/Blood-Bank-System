@@ -23,20 +23,23 @@ db.once('open',()=>console.log("Connected to Database"))
 
 //the donor applicaation details
 app.post("/donor",(req,res)=>{
-    var name = req.body.name;
+    var Fname = req.body.FirstName;
+    var Middlename = req.body.MiddleName;
+    var LastName = req.body.LastName;
     var email = req.body.email;
-    var phno = req.body.phno;
-    var password = req.body.password;
-    var Blood_type = req.body.Blood_type;
-    var Ssn = req.body.Ssn;
+    var phone = req.body.phone;
+    var bloodType = req.body.bloodType;
+    var ID = req.body.ID;
 
     var data = {
-        "ID": name,
+        "Fname": Fname,
+        "Mname":Middlename,
+        "Lname":LastName,
         "email" : email,
-        "phno": phno,
+        "phone": phone,
         "password" : password,
-        "Blood_type":Blood_type,
-        "Ssn": Ssn
+        "Blood_type":bloodType,
+        "ID": ID
     }
     async function Handle(data){  
         try {
@@ -56,23 +59,26 @@ app.post("/donor",(req,res)=>{
       Handle(data);
 })
 
-//the donor applicaation details
+//the recipient applicaation details
 app.post("/recipient",(req,res)=>{
-    var name = req.body.name;
-    var email = req.body.email;
-    var phno = req.body.phno;
-    var password = req.body.password;
-    var Blood_type = req.body.Blood_type;
-    var Ssn = req.body.Ssn;
+  var Fname = req.body.FirstName;
+  var Middlename = req.body.MiddleName;
+  var LastName = req.body.LastName;
+  var email = req.body.email;
+  var phone = req.body.phone;
+  var bloodType = req.body.bloodType;
+  var ID = req.body.ID;
 
-    var data = {
-        "ID": name,
-        "email" : email,
-        "phno": phno,
-        "password" : password,
-        "Blood_type":Blood_type,
-        "Ssn": Ssn
-    }
+  var data = {
+      "Fname": Fname,
+      "Mname":Middlename,
+      "Lname":LastName,
+      "email" : email,
+      "phone": phone,
+      "password" : password,
+      "Blood_type":bloodType,
+      "ID": ID
+  }
     async function Handle(data){  
         try {
           const query = data;
