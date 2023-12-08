@@ -24,9 +24,13 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
-#Box{
+.Box{
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-around; 
+    align-items: baseline;   
+}
+.content{
+    width: 300px;
 }
 details{
     border: 1px solid #aaa;

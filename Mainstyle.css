@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.navMenu {
+    position:absolute;
+    top: 5%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .navMenu a {
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    width: 120px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navMenu a:hover {
+    color: blue;
+  }
+  
+  .navMenu .dot {
+    width: 6px;
+    height: 6px;
+    background: blue;
+    border-radius: 50%;
+    opacity: 0;
+    -webkit-transform: translateX(55px);
+    transform: translateX(55px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navMenu a:nth-child(1):hover ~ .dot {
+    -webkit-transform: translateX(55px);
+    transform: translateX(55px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+  
+  .navMenu a:nth-child(2):hover ~ .dot {
+    -webkit-transform: translateX(180px);
+    transform: translateX(180px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+  
+  .navMenu a:nth-child(3):hover ~ .dot {
+    -webkit-transform: translateX(300px);
+    transform: translateX(300px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+  
+  .navMenu a:nth-child(4):hover ~ .dot {
+    -webkit-transform: translateX(435px);
+    transform: translateX(435px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+  
+  .container{
+    display: flex;
+    height: 800px;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    
+  }
+
+  img{
+    width: 400px;
+    height: 350px;
+  }
+  .center{
+    display: block;
+    top: 6%;
+    margin: auto;
+    width: 1200px;
+    align-items: center;
+  }
+  .linkStyle{
+    background-color: blue;
+    border: 2px solid white;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    width: 200px;
+    border-radius: 15px;
+  }
+  .linkStyle:hover{
+    background-color: darkblue;
+  }
+  .linkStyle a{
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+    
+    
+  }
+  p{
+    font-size: larger;
+  }
+  h3{
+    font-size: xx-large;
+  }
+  
