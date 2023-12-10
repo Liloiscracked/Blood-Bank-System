@@ -7,7 +7,19 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="container">
     <h1>Your request is Recieved!!</h1>
-    
+    </div>
+    <script>
+        // Create a new paragraph element
+        var newParagraph = document.createElement('p');
+  
+        // Set the text content of the paragraph
+        newParagraph.textContent = 'This is a dynamically created paragraph.';
+  
+        // Append the paragraph to the container div
+        var container = document.getElementById('container');
+        container.appendChild(newParagraph);
+</script>
 </body>
 </html>

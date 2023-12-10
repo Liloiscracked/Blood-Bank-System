@@ -37,7 +37,6 @@ app.post("/donor",(req,res)=>{
         "Lname":LastName,
         "email" : email,
         "phone": phone,
-        "password" : password,
         "Blood_type":bloodType,
         "ID": ID
     }
@@ -75,7 +74,6 @@ app.post("/recipient",(req,res)=>{
       "Lname":LastName,
       "email" : email,
       "phone": phone,
-      "password" : password,
       "Blood_type":bloodType,
       "ID": ID
   }
@@ -85,7 +83,7 @@ app.post("/recipient",(req,res)=>{
           const document = await db.collection('recipient').findOne(query);
           if (document){
             console.log('Document exists:', document);
-            return res.redirect('donor.html');
+            return res.redirect('recepient.html');
           } else {
             db.collection('recipient').insertOne(data);
             return res.redirect('Done.html');
