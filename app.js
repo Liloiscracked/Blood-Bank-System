@@ -9,6 +9,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({
     extended:true
 }))
+app.set('view engine','ejs');
 
 mongoose.connect('mongodb+srv://lilo:123@cluster0.bonii93.mongodb.net/Blood_bank',{
     useNewUrlParser: true,
@@ -95,7 +96,10 @@ app.post("/recipient",(req,res)=>{
       Handle(data);
 })
 
-
+app.get('/:name',(req,res)=>{
+  var name = "Lilooooo"; 
+  res.render('Home',{data:{name:name}});
+})
 app.get('/donor',(req,res)=>{
   res.sendFile('public/donor.html');
 })

@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    justify-self: center;
+}
+.donor{
+    background-color: brown;
+    border-radius: 20%;
+}
+button{
+    right: 50%;
+}
